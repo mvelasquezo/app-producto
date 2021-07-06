@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>abc Producto::GT</title>
+    <link rel="icon" href="data:;base64,=" />
+    <link rel="stylesheet" href="assets/css/normalize.css"/>
+    <link rel="stylesheet" href="assets/css/min/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/index/style.css"/>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light p-2">
+        <a class="navbar-brand" href="/">Catálogo</a>
+    </nav>
+
+    <div class="container">
+        <div id="app" class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">Nuevo</div>
+                    <div class="card-body">
+                        
+                        <h4 class="card-title">Producto</h4>
+
+                        <form id="frm-producto" class="d-grid gap-3 needs-validation" novalidate>
+
+                            <div class="form-floating">
+                                <input id="nom" type="text"
+                                    name="nombre"
+                                    class="form-control form-control-sm"
+                                    placeholder="Nombre"
+                                    autocomplete="off"
+                                    required
+                                />
+                                <div class="valid-feedback">Excelente nombre</div>
+                                <div class="invalid-feedback">Por favor, elija un nombre para el producto</div>
+                                <label for="nom" class="col-form-label col-form-label-med text-secondary">Nombre</label>
+                            </div>
+
+                            <div class="form-group form-floating">
+                                <div class="input-group">
+                                    <span class="input-group-text">Q.</span>
+                                    <input id="pre" type="number" 
+                                        name="precio"
+                                        step="0.01"
+                                        class="form-control wo-spin"
+                                        placeholder="Precio"
+                                        aria-label="Precio (al quetzal más cercano)"
+                                    />
+                                    <div class="invalid-feedback">Por favor, coloque el precio</div>
+                                </div>
+                            </div>
+
+                            <div class="form-floating">
+                                <input id="anyo" type="number"
+                                    name="anyo"
+                                    min="1900" max="2099" step="1"
+                                    value="2021"
+                                    class="form-control wo-spin"
+                                    placeholder="Año"
+                                    required
+                                />
+                                <div class="valid-feedback"></div>
+                                <div class="invalid-feedback">Por favor, coloque un año para el producto</div>
+                                <label for="anyo" class="col-form-label col-form-label-med text-secondary">Año</label>
+                            </div>
+
+                            <div class="form-group d-grid">
+                                <button id="btn-guardar" type="submit" class="btn btn-primary btn-block"
+                                    style="border-radius: 3px;">Agregar</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div id="producto-lista"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/js/jsBase.js"></script>
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
