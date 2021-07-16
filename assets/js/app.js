@@ -34,10 +34,14 @@ let jsApp = function() {
             self.productoListaClick( event );
         });
 
+        jsBase.$( 'anyo' ).value = new Date().getFullYear();
+
         document.querySelector( '#nom' )?.focus();
     };
 
     fn.frmProductoSubmit = function( event ) {
+
+
         let e = event || window.event;
 
         if( !e.defaultPrevented ) {
@@ -45,8 +49,8 @@ let jsApp = function() {
             const frm = new FormData( e.target );
             const producto 
                 = new Producto( frm.get( 'nombre' )
-                                , parseFloat( frm.get( 'precio' ).replace( ',','.' ) )
-                                , parseFloat( frm.get( 'anyo' ) ) );
+                                , parseFloat( frm.get( 'precio' ).replace( ',','.' ) ) || 0
+                                , parseFloat( frm.get( 'anyo' ) ) || new Date().getFullYear() );
             const ui = new Ui();
 
             ui.addProducto( producto );
