@@ -37,6 +37,8 @@ class Ui {
 
         if( null != objPar && true == objPar.initFoc )
             jsBase.$( 'nom' )?.focus();
+
+        jsBase.$( 'anyo' ).value = new Date().getFullYear();
     }
 
     remProducto( target ) {
